@@ -1,0 +1,12 @@
+body{
+    height: 768px;
+    margin: 0;
+    padding: 0;
+}
+#map{
+    height: 100%;
+}
+.namecard{
+    width: 375px;
+    height:250px;
+}
