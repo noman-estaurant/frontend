@@ -8,13 +8,22 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div class="namecard" id="app">
-    <div id="map"></div>
-    <div class="info">
-        <p class="Storename">{{name}}</p>
-        <p class="waitTime">等待時間:{{waitTime}}分</p>
-    </div>
+  <div class="nav"></div>
+  <div class="index">
+      <div class="namecard" id="app">
+          <div class="info">
+            <div class="storedata">
+                <p class="Store">{{name}}</p>
+                <p class="adress">{{adress}}</p>
+            </div>
+            <div class="nc">
+                <p class="waitTime">等待{{waitTime}}分鐘</p>
+                <p class="distance">{{distance}}m</p>
+            </div>
+          </div>
+        </div>
   </div>
+  <div class="foo"></div>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDccWrnP-3yQ0h_SXABCLSKpYK8yfrIBbc&callback=initMap"async defer></script>
   <script src="index.js"></script>
 </body>
