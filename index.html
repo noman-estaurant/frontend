@@ -1,29 +1,50 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW"></html>
+<html lang="zh-Hant-TW">
 <head>
   <title>card</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <link rel="stylesheet" href="style.css">
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="./node_modules/jquery-touchswipe/jquery.touchSwipe.min.js"></script>
+  <script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
 </head>
 <body>
   <div class="nav"></div>
-  <div class="index">
-      <div class="namecard" id="app">
+  <div class="index" id="app">
+      <div class="namecard" v-for="data in Data.restaurant">
+        <img src="./pic/ClipMap.jpg" alt="" class="clip_map"id="No.1">
           <div class="info">
             <div class="storedata">
-                <p class="Store">{{name}}</p>
-                <p class="adress">{{adress}}</p>
+                <p class="Store" v-for="">{{data.name}}</p>
+                <p class="adress">{{data.address}}</p>
             </div>
             <div class="nc">
-                <p class="waitTime">等待{{waitTime}}分鐘</p>
+                <p class="waitTime">等待{{data.wait}}分鐘</p>
                 <p class="distance">{{distance}}m</p>
             </div>
           </div>
-        </div>
+          <img class="fork" src="./pic/fork.png" alt="">
+      </div>
   </div>
-  <div class="foo"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDccWrnP-3yQ0h_SXABCLSKpYK8yfrIBbc&callback=initMap"async defer></script>
+      <div id="direction"></div>
+      <div class="dir_card" id="dir_app">
+        <div class="dir_info">
+          <div class="name">
+            <p>{{name}}</p>
+            <p class="dir_dis">{{distance}} m</p>
+          </div>
+          <p class="other">{{adress}}</p>
+          <p class="other">{{phonenumber}}</p>
+        </div>
+        <div class="dir_waitTime">
+          <img src="./pic/clock.png" style="height:13px;width:13px;">
+          <p>等待{{waitTime}}分鐘</p>
+        </div>
+        <img class="pngfork"src="./pic/cutlery.png" alt="">
+      </div>
+  </div>
+  <div class="foo" id="foo"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDccWrnP-3yQ0h_SXABCLSKpYK8yfrIBbc"async defer></script>
   <script src="index.js"></script>
 </body>
+</html>
