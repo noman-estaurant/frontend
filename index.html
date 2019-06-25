@@ -12,7 +12,9 @@
   <div class="nav"></div>
   <div class="index" id="app">
       <div class="namecard" v-for="data in Data.restaurant">
-        <img src="./pic/ClipMap.jpg" alt="" class="clip_map"id="No.1">
+        <div id="smallMap">
+          <img src="./pic/smallMap.jpg" alt="" class="clip_map"id="No.1">
+        </div>
           <div class="info">
             <div class="storedata">
                 <p class="Store" v-for="">{{data.name}}</p>
@@ -38,7 +40,7 @@
         </div>
         <div class="dir_waitTime">
           <img src="./pic/clock.png" style="height:13px;width:13px;">
-          <p>等待{{waitTime}}分鐘</p>
+          <p id='dir_wait'>等待{{waitTime}}分鐘</p>
         </div>
         <img class="pngfork"src="./pic/cutlery.png" alt="">
       </div>

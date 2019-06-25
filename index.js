@@ -48,17 +48,17 @@ setTimeout(()=>{
           $('#direction').show();
           $('#dir_app').show();
         });
+        dir_app = new Vue({
+          el:'#dir_app',
+          data:{
+            name:Data.restaurant[restaurantid].name,
+            waitTime:Data.restaurant[restaurantid].waitTime,
+            distance:Data.restaurant[restaurantid].distance,
+            adress:Data.restaurant[restaurantid].adress,
+            phonenumber:Data.restaurant[restaurantid].phonenumber
+          }
+        })
       });
-    }
-  })
-  dir_app = new Vue({
-    el:'#dir_app',
-    data:{
-      name:Data.restaurant[restaurantid].name,
-      waitTime:Data.restaurant[restaurantid].waitTime,
-      distance:Data.restaurant[restaurantid].distance,
-      adress:Data.restaurant[restaurantid].adress,
-      phonenumber:Data.restaurant[restaurantid].phonenumber
     }
   })
 },3000)
@@ -109,6 +109,9 @@ function initDirection(){
 //Vue JS
 $( document ).ready(function() {
   get_userPosition();
+  if(Data.restaurant[restaurantid].waitTime>=10){
+    document.getElementById('dir_wait').style('color:red;');
+  }
   console.log( "ready!" );
 });
 function AboutMap(){
